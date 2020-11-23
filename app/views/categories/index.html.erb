@@ -1,0 +1,25 @@
+<table>
+    <h1>Tara-Task</h1>
+    <h2>Home</h2>
+    <thead>
+        <tr class='column_labels'>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @categories.each do |category| %>
+            <tr class='categories_layout'>
+                <td class='category_id'><%= category.id %></td>
+                <td class='category_name'><strong>Name: </strong><%= article.name %></td>
+                # <td class='btn' id='btn_edit'><%= link_to 'Edit', edit_article_path(article) %></td>
+                # <td class='btn' id='btn_show'><%= link_to 'Show', show_article_path(article) %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<p class='click_links'>
+    <%= link_to 'New Category', new_category_path %>
+</p>
