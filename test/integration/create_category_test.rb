@@ -1,14 +1,17 @@
 require 'test_helper'
 
 class CreateCategoryTest < ActionDispatch::IntegrationTest
-    test 'should go to new category form and create category' do
-        get new_category_url
+    test 'should go to new category form' do
+        get new_category_path
         assert_response :success
+    end
 
-        post create_category_path, params: { category: { name: '' } }
+    test 'should create new category' do
+        post create_category_path, params: { category: { name: 'sample' } }
         assert_response :redirect
-
+        
         follow_redirect!
         assert_response :success
     end
+
 end
