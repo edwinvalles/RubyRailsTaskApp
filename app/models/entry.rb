@@ -1,8 +1,8 @@
-class Category < ApplicationRecord
+class Entry < ApplicationRecord
     validates :name, presence: true,
                     uniqueness: true
-    validates :description, presence: true,
+    validates :details, presence: true,
                     length: { minimum: 5}
 
-    has_many :entries
+    belongs_to :category
 end

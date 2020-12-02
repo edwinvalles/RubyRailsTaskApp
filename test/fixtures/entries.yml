@@ -4,10 +4,11 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: 
-  name: Business
-  description: This is for business.
+one:
+  name: Go to Bank
+  details: Deposit
 
-two: 
-  name: Personal
-  description: This is for personal. 
+two:
+  name: Let's Eat
+  details: Buy Food
+

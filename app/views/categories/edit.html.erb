@@ -1,9 +1,9 @@
 <%= form_with model: @category, local: true do |f| %>
-    <!-- ^ defines the path for new articles -->
-    
-    <h1>Tara-Task</h1>
-    <h2>New Category</h2>
-    
+    <!-- ^ defines the path for editing articles -->
+
+    <h1>Taka-Task</h1>
+    <h2>Edit Category</h2>
+
         <p>
             <% if @category.errors.any? %>
                 <ul>
@@ -17,7 +17,7 @@
         </p>
     <!-- ^ puts error checking -->
     
-        <p>
+        <p class='input_field' id='input_name'>
             <%= f.label :name %>
             <%= f.text_field :name %>
         </p>
@@ -32,4 +32,5 @@
         </p>
     <% end %>
     
+    <%= link_to 'Delete?', delete_category_path, method: :delete %>
     <%= link_to 'Back to Categories', categories_path %>

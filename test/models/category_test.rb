@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class CategoryTest < ActiveSupport::TestCase
+
+  def setup
+    category = Category.create(name: 'Name', description: 'Tasks' )
+  end
+
   test 'should not save category without name' do
     category = Category.new
     assert_not category.save, 'Saved without name'
@@ -11,9 +16,14 @@ class CategoryTest < ActiveSupport::TestCase
     assert_not category.save, 'Name already exists'
   end
 
-  test 'must have id params' do
-    category = Category.find(params[:id])
-    assert_not category.show, 'Entry does not exist'
+  test 'should not save category without description' do 
+    category = Category.new
+    assert_not category.save, 'No description'
+  end
+
+  test 'should save category with valid params' do
+    category = Category.create(name: 'Happy', description: 'Paths' )
+    assert category.save
   end
 
 end

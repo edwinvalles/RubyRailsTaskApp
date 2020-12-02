@@ -21,31 +21,31 @@ class CategoriesController < ApplicationController
         end
     end 
 
-    # def edit
-    #     @article = Article.find(params[:id])
-    # end 
+    def edit
+        @category = Category.find(params[:id])
+    end 
 
-    # def update
-    #     @article = Article.find(params[:id])
-    #     if @article.update(article_params)
-    #         redirect_to articles_path
-    #     else
-    #         render :edit
-    #     end
-    # end
+    def update
+        @category = Category.find(params[:id])
+        if @category.update(category_params)
+            redirect_to categories_path
+        else
+            render :edit
+        end
+    end
 
-    # def delete
-    #     @article = Article.find(params[:id])
-    #     if @article.destroy
-    #         redirect_to articles_path
-    #     else
-    #         render :edit
-    #     end
-    # end
+    def delete
+        @category = Category.find(params[:id])
+        if @category.destroy
+            redirect_to categories_path
+        else
+            render :edit
+        end
+    end
 
     private
     def category_params
-        params.require(:category).permit(:name)
+        params.require(:category).permit(:name,:description)
     end 
 
 end
