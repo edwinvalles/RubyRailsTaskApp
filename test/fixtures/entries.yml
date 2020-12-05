@@ -5,10 +5,12 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
+  category_id: 1
   name: Go to Bank
   details: Deposit
 
 two:
+  category_id: 2
   name: Let's Eat
   details: Buy Food
 

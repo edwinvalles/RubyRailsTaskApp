@@ -3,6 +3,7 @@ require 'test_helper'
 class EntryTest < ActiveSupport::TestCase
  
   def setup
+    category = Category.create(name: 'Category', description: 'Testing')
     entry = Entry.create(name: 'Task', details: 'Need to do this')
   end
   
@@ -17,7 +18,7 @@ class EntryTest < ActiveSupport::TestCase
   end
 
   test 'should save entry with valid params' do
-    entry = Entry.create(name: 'Happy', details: 'Task')
+    entry = Entry.create(name: 'Happy', details: 'Path', category_id: 1 )
     assert entry.save, 'No details'
   end
 

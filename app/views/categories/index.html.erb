@@ -16,7 +16,7 @@
                 <td class='category_name'><%= category.name %></td>
                 <td class='category_description'><%= category.description %></td>
                 <td class='btn' id='btn_edit'><%= link_to 'Edit', edit_category_path(category) %></td>
-                <td class='btn' id='btn_show'><%= link_to 'Show', show_category_path(category) %></td>
+                <td class='btn' id='btn_show'><%= link_to 'Show', category_path(category) %></td>
             </tr>
         <% end %>
     </tbody>

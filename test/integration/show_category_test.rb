@@ -7,12 +7,12 @@ class ShowCategoryTest < ActionDispatch::IntegrationTest
     end
 
     test 'should go to show category form' do
-        get show_category(:id => @category.id )
+        get category_path(:id => @category.id )
         assert_response :success
     end
 
     test 'should have a name' do
-        get show_category(:id => @category.id )
+        get category_path(:id => @category.id )
         assert_response :success
     end
 
