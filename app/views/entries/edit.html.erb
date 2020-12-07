@@ -1,0 +1,42 @@
+<%= form_with model: [@category, @entry], local: true do |f| %>
+    <!-- ^ defines the path for editing entries -->
+
+    <h1>Taka-Task</h1>
+    <h2>Edit Entry</h2>
+
+        <p>
+            <% if @entry.errors.any? %>
+                <ul>
+                    <% @entry.errors.full_messages.each do |message| %>
+                        <li>
+                            <%= message %>
+                        </li>
+                    <% end %>    
+                </ul> 
+            <% end %>
+        </p>
+    <!-- ^ puts error checking -->
+    
+        <p class='input_field' id='category_id'>
+            <%= f.label :category_id %>
+            <%= f.select :category_id, options_to_select_from (Category.all, :id, :name), { }, {class: 'select'} %>
+        </p>
+    
+    
+        <p class='input_field' id='input_name'>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+        </p>
+
+        <p>
+            <%= f.label :details %>
+            <%= f.text_field :details %>
+        </p>
+    
+        <p>
+            <%= f.submit %>
+        </p>
+    <% end %>
+    
+    <%= link_to 'Delete?', method: :destroy %>
+    <%= link_to 'Back to Entries', category_entries_path %>

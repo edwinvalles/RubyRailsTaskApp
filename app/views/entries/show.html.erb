@@ -1,0 +1,14 @@
+<h1>Tara-Task</h1>
+<h2>Selected Entry</h2>
+
+<p>
+    <strong>Name: </strong><br><%= @entry.name %>
+</p><br>
+
+<p>
+    <strong>Description: </strong><br><%= @entry.details %>
+</p><br>
+
+<p class='click_links'>
+    <%= link_to 'Back to Entries', category_entry_path %>
+</p>

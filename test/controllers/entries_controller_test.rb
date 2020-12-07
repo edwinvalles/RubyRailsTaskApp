@@ -2,15 +2,27 @@ require 'test_helper'
 
 class EntriesControllerTest < ActionDispatch::IntegrationTest
 
-    def setup
-        @category = categories(:one)
-        @entry = entries(:one)
-        get category_entries_path(@category.entries)
+    setup do
+        @entry = entries(:default)
+        @category = categories(:two)
+    end
+
+    test 'should get index' do
+        get category_entries_path(@category, @entry)
+        assert_response :success
     end
 
     test 'should get new' do
-        get new_category_entry_path(@category.entry)
+        get new_category_entry_path(@category, @entry)
         assert_response :success
     end 
+
+    test "should create entry" do
+        assert_difference('Entry.count') do
+          post category_entries_path(@category, @entry), params: { entry: {name: 'task one', details: 'must do this'} }
+        end
+    
+        assert_redirected_to category_entries_path
+      end
 
 end

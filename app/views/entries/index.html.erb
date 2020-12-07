@@ -14,11 +14,11 @@
         <% @entries.each do |entry| %>
             <% category = Category.find(entry.category.id) %>
             <tr class='entries_layout'>
-                <td class='category_name'><%= link_to category.name, new_category_entry_path(@category) %></td>
+                <td class='category_name'><%= link_to category.name, category_path(@category) %></td>
                 <td class='entry_name'><%= link_to entry.name, [@category, entry] %></td>
                 <td class='entry_details'><%= entry.details %></td>
-                <td class='btn' id='btn_edit'><%= link_to 'Edit', edit_category_entry_path(entry) %></td>
-                <td class='btn' id='btn_show'><%= link_to 'Show', category_entries_path(entry) %></td>
+                <td class='btn' id='btn_edit'><%= link_to 'Edit', edit_category_entry_path(@category, entry) %></td>
+                <td class='btn' id='btn_show'><%= link_to 'Show', category_entries_path(@category, entry) %></td>
             </tr>
         <% end %>
     </tbody>

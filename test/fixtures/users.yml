@@ -4,16 +4,10 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-
-default: &default
-  category_id: 2
-  id: 1
-  name: Go to Bank
-  details: Deposit
-
-one:
-  category_id: 1
-  id: 2
-  name: Let's Eat
-  details: Buy Food
-
+one: 
+  email: my@email.com
+# column: value
+#
+two:
+  email: another@email.com
+# column: value
