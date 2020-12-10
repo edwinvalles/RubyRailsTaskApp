@@ -30,16 +30,16 @@ end
 def update
     @entry = Entry.find(params[:id])
     if @entry.update(entry_params)
-        redirect_to category_entries_path
+        redirect_to category_entries_path(@category.id)
     else
         render :edit
     end
 end
 
-def delete
+def destroy
     @entry = Entry.find(params[:id])
     if @entry.destroy
-        redirect_to entries_path
+        redirect_to category_entries_path
     else
         render :edit 
     end
