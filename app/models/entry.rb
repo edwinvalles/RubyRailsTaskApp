@@ -5,4 +5,5 @@ class Entry < ApplicationRecord
                     length: { minimum: 5}
 
     belongs_to :category
+    belongs_to :user
 end

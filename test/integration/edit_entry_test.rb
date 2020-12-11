@@ -13,7 +13,7 @@ class EditEntryTest < ActionDispatch::IntegrationTest
         assert_response :success
 
         assert_changes '@entry.name' do
-            put category_entry_path(:category_id => @category.id, :id => @entry.id), params: { entry: {name: 'Editing', details: 'Tasking', category_id: 2} }
+            put category_entry_path(:category_id => @category.id, :id => @entry.id), params: { entry: {name: 'Editing', details: 'Tasking', category_id: 3} }
             @entry.reload
             assert_response :redirect
         end

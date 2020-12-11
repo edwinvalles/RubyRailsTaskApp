@@ -17,7 +17,7 @@ class EntryTest < ActiveSupport::TestCase
   end
 
   test 'should save entry with valid params' do
-    entry = Entry.new(name: 'Happy', details: 'Paths', category_id: @category.id )
+    entry = Entry.new(name: 'Happy', details: 'Pathway', category_id: @category.id )
     assert entry.save, 'No details'
   end
 
